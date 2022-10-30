@@ -2,6 +2,7 @@ package com.devh.project.jsoup.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
@@ -9,6 +10,7 @@ import java.util.Map;
 
 @Builder
 @Getter
+@ToString
 public class JsoupRequest
 {
     private String url;
