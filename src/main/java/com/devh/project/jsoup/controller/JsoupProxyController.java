@@ -34,7 +34,7 @@ public class JsoupProxyController
             , HttpServletRequest request
     )
     {
-        log.info("[GET] api/jsoup-proxy - {}", request.getRemoteAddr());
+        log.info("[GET] api/jsoup-proxy - {}, {}", request.getRemoteAddr(), jsoupRequest.toString());
         return ApiResponse.success(ApiStatus.Success.OK, jsoupProxyService.getDocumentHtml(jsoupRequest));
     }
 }
