@@ -67,7 +67,8 @@ public class ApiStatus {
 
     @Getter
     public enum CustomError {
-        JSOUP_ERROR("Jsoup Error", 800, "Something wrong with jsoup request.");
+        JSOUP_ERROR("Jsoup Error", 800, "Something wrong with jsoup request.")
+        , JSOUP_NOT_FOUND_ERROR("Jsoup Not Found Error", 800404, "not found.");
 
         private final String status;
         private final int code;

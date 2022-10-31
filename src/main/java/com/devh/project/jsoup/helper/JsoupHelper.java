@@ -3,6 +3,7 @@ package com.devh.project.jsoup.helper;
 import com.devh.project.jsoup.dto.JsoupRequest;
 import com.devh.project.jsoup.exception.JsoupException;
 import com.devh.project.jsoup.exception.JsoupMethodException;
+import com.devh.project.jsoup.exception.JsoupNotFoundException;
 import com.devh.project.jsoup.exception.JsoupUrlException;
 import org.jsoup.Connection;
 import org.jsoup.HttpStatusException;
@@ -24,6 +25,10 @@ public class JsoupHelper
         }
         catch (HttpStatusException e)
         {
+            if (e.getStatusCode() == 404)
+            {
+                throw new JsoupNotFoundException(e, HttpStatus.resolve(e.getStatusCode()));
+            }
             throw new JsoupException(e, HttpStatus.resolve(e.getStatusCode()));
         }
         catch (JsoupException e)
