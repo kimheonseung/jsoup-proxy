@@ -2,7 +2,7 @@ package com.devh.project.jsoup.exception;
 
 import org.springframework.http.HttpStatus;
 
-public class JsoupNotFoundException extends RuntimeException
+public class JsoupNotFoundException extends JsoupException
 {
     private HttpStatus status;
     public JsoupNotFoundException(Throwable e)
